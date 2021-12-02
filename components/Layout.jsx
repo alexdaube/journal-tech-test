@@ -9,7 +9,7 @@ export const Layout = ({ children }) => (
     <div className="layout">{children}</div>
     <style jsx>{`
       .layout {
-        padding: 0 2rem;
+        padding: 1rem 2rem;
       }
     `}</style>
   </>

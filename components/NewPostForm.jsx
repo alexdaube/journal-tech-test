@@ -1,14 +1,16 @@
-import { useForm, FormProvider } from 'react-hook-form';
+import { useForm, FormProvider, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useCallback } from 'react';
-import { Button, capitalize, Stack } from '@mui/material';
+import { Button, capitalize, Stack, Typography } from '@mui/material';
 import TextFieldController from './TextFieldController';
 import PropType from 'prop-types';
+import SentimentPicker from './SentimentPicker';
 
 const FormValidationSchema = yup.object().shape({
   title: yup.string().required(),
   content: yup.string().required(),
+  sentiment: yup.string(),
 });
 
 const NewPostForm = ({ defaultValues, onPost, onCancel }) => {
@@ -19,6 +21,7 @@ const NewPostForm = ({ defaultValues, onPost, onCancel }) => {
   });
 
   const {
+    control,
     handleSubmit,
     formState: { errors, isDirty, isValid, isSubmitting },
   } = formMethods;
@@ -60,6 +63,22 @@ const NewPostForm = ({ defaultValues, onPost, onCancel }) => {
               !!errors && !!errors.content ? errors.content.message : ''
             )}
           />
+
+          <Stack direction="column" gap={1}>
+            <Typography variant="subtitle1">How are you feeling?</Typography>
+            <Controller
+              name="sentiment"
+              control={control}
+              render={({ field: { onChange, ...fieldRest } }) => (
+                <SentimentPicker
+                  onChange={(event, newValue) => {
+                    onChange(newValue);
+                  }}
+                  {...fieldRest}
+                />
+              )}
+            />
+          </Stack>
 
           <Stack direction="row" justifyContent="flex-end" gap={1}>
             <Button onClick={onCancel}>Cancel</Button>

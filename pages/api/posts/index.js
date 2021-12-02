@@ -13,6 +13,7 @@ export default async (req, res) => {
       title: postData.title,
       content: postData.content,
       authorId: postData.author ? postData.author.id : null,
+      sentiment: postData.sentiment || null,
     });
     res.json(post);
   }

@@ -5,19 +5,20 @@ import { fetchPosts } from '../prisma/helpers/post';
 import createCache from '@emotion/cache';
 import { CacheProvider } from '@emotion/react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Post from '../components/Post';
+import { Box, Button, Modal, Stack } from '@mui/material';
+import { useState } from 'react';
+import NewPostForm from '../components/NewPostForm';
+import safeJsonStringify from 'safe-json-stringify';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import Post from '../components/Post';
-import { Box, Button, Modal } from '@mui/material';
-import { useState } from 'react';
-import NewPostForm from '../components/NewPostForm';
-import safeJsonStringify from 'safe-json-stringify';
 
 const NEW_POST_DEFAULT_VALUES = {
   title: '',
   content: '',
+  sentiment: '',
 };
 
 const emotionCache = createCache({ key: 'css' });
@@ -33,11 +34,21 @@ const Journal = ({ posts: defaultPosts }) => {
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <Layout>
-          <Button onClick={handleOpen}>Add Entry</Button>
+          <Stack direction="column" gap={2}>
+            <Box>
+              <Button
+                size="medium"
+                fullWidth={false}
+                onClick={handleOpen}
+                variant="contained">
+                New Post
+              </Button>
+            </Box>
 
-          {posts.map((post) => (
-            <Post key={`${post.id}`} post={post} />
-          ))}
+            {posts.map((post) => (
+              <Post key={`${post.id}`} post={post} />
+            ))}
+          </Stack>
 
           <Modal
             disablePortal

@@ -21,4 +21,5 @@ model Post {
   createdAt DateTime @default(now())
   title     String
   author    User?    @relation(fields: [authorId], references: [id])
+  sentiment String?
 }

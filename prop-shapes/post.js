@@ -7,4 +7,5 @@ export const PostShape = PropTypes.shape({
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   author: AuthorShape,
+  sentiment: PropTypes.string,
 });
