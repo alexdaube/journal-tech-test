@@ -1,18 +1,12 @@
 import { Header } from './Header';
 import PropTypes from 'prop-types';
+import { Divider } from '@mui/material';
 
 export const Layout = ({ children }) => (
   <>
     <Header />
+    <Divider sx={{ mx: 4 }} />
     <div className="layout">{children}</div>
-    <style jsx global>{`
-      body {
-        margin: 0;
-        font-size: 16px;
-        font-family: Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-          'Segoe UI Emoji', 'Segoe UI Symbol';
-      }
-    `}</style>
     <style jsx>{`
       .layout {
         padding: 0 2rem;

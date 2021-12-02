@@ -14,12 +14,24 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@emotion/cache": "^11.6.0",
+    "@emotion/react": "^11.7.0",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.6.0",
+    "@fontsource/roboto": "^4.5.1",
+    "@hookform/resolvers": "^2.8.3",
+    "@mui/icons-material": "^5.2.0",
+    "@mui/material": "^5.2.2",
     "@prisma/client": "^2.23.0",
+    "date-fns": "^2.27.0",
     "next": "^10.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "react-markdown": "^5.0.0"
+    "react-hook-form": "^7.20.5",
+    "react-markdown": "^5.0.0",
+    "safe-json-stringify": "^1.2.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "eslint": "^7.24.0",
@@ -29,7 +41,7 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.5.0",
     "prisma": "^2.23.0"
   }
 }
