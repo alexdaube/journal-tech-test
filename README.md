@@ -52,7 +52,7 @@ Update this README file by answering the questions below.
 
 ### Date Or Reflection
 
-The date you're submitting this.
+December 2, 2021
 
 ### Location of deployed application (not necessary for Junior Engineers)
 
@@ -60,11 +60,11 @@ Please provide the url where we can find and interact with your running applicat
 
 ### Instructions to run assignment locally
 
-Please provide us with the necessary instructions to run your solution if it is implemented with technologies different from the starting repo.
+No additional instructions
 
 ### Time spent
 
-How much time did you spend on the assignment? Normally, this is expressed in hours.
+6 hours
 
 ### Assumptions made
 
@@ -72,6 +72,7 @@ Use this section to tell us about any assumptions that you made when creating yo
 
 ### Shortcuts/Compromises made
 
+Integration/Component tests. I had to deal with different setup
 If applicable. Did you do something that you feel could have been done better in a real-world application? Please let us know.
 
 ### Assume your application will go into production...
