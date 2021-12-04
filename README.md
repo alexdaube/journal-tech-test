@@ -60,7 +60,14 @@ Please provide the url where we can find and interact with your running applicat
 
 ### Instructions to run assignment locally
 
-No additional instructions
+Database was changed to postgres for production purposes.
+ * Make sure that docker is installed
+ * Make sure to have docker-compose CLI
+ * Make sure nothing is running locally on port 5432
+```zsh 
+// At the root of the project in a command line shell
+docker-compose up postgres
+```
 
 ### Time spent
 
