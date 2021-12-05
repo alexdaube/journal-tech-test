@@ -71,6 +71,13 @@ The database was changed to postgres for production purposes.
 // At the root of the project in a command line shell
 docker-compose up postgres
 ```
+
+##### Adjust the DATABASE_URL variable in the .env file
+
+```
+DATABASE_URL=postgresql://journal:journal@localhost:5432/journal?schema=public
+```
+
 All the other commands are still valid once this is set up.
 
 ### Time spent
